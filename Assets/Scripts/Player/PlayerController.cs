@@ -3,11 +3,14 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public SpriteRenderer playerSprite;
+    public float moveSpeed = 2f;
+    float minX = -8.6f;
+    float maxX = 8.6f;
 
     private Camera mainCamera;
-    private float playerSpriteHalfWidth;
     private float rightScreenEdge;
     private float leftScreenEdge;
+    private float playerSpriteHalfWidth;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +35,24 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        float hlInput = Input.GetAxis("Horizontal");
+        float rightLimit = rightScreenEdge - playerSpriteHalfWidth;
+        float leftLimit = leftScreenEdge + playerSpriteHalfWidth;
+        Vector2 currentPos = transform.position;
+
+        if (hlInput > 0f && transform.position.x < rightLimit)
+        {
+            
+            Vector2 newPos = currentPos + new Vector2(1f, 0f);
+
+            transform.position = Vector2.MoveTowards(currentPos, newPos, moveSpeed * Time.deltaTime);
+        }
+        else if (hlInput < 0f && transform.position.x > leftLimit)
+        {
+            //Vector2 currentPos = transform.position;
+            Vector2 newPos = currentPos - new Vector2(1f, 0f);
+
+            transform.position = Vector2.MoveTowards(currentPos, newPos, moveSpeed * Time.deltaTime);
+        }
     }
 }

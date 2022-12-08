@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!212 &180928838 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8282605717359463197, guid: 390ecafa345db6d4a90ed799ee01b656, type: 3}
+  m_PrefabInstance: {fileID: 8282605717086475198}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &392637697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -320,6 +325,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1859970591 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8282605717347492442, guid: 390ecafa345db6d4a90ed799ee01b656, type: 3}
+  m_PrefabInstance: {fileID: 8282605717086475198}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1859970593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859970591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92cb564d9d9eb324287d1fc89cf21ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSprite: {fileID: 180928838}
+  moveSpeed: 5
 --- !u!1001 &2369062777054727803
 PrefabInstance:
   m_ObjectHideFlags: 0
