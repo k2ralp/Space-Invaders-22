@@ -343,7 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSprite: {fileID: 180928838}
-  moveSpeed: 5
+  moveSpeed: 10
 --- !u!1001 &2369062777054727803
 PrefabInstance:
   m_ObjectHideFlags: 0
