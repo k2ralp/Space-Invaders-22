@@ -23,6 +23,7 @@ public class Shooter : MonoBehaviour
 
     void Shoot()
     {
+        // Create a clone of the projectile's prefab during gameplay
         Instantiate(projectilePrefab, transform.position, Quaternion.identity);
     }
 }
