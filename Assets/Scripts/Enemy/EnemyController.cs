@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     public float maxPosX;
     public float moveDistance;
     public float timeStep;
+
     private bool isMovingRight = true;
 
     // Use this for initialization
