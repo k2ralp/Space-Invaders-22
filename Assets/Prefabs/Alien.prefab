@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6573415535632911729}
   m_Layer: 0
   m_Name: Alien
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: 11090f2050b424347995f46b9968bfdc, type: 3}
+  EnemyCount: 36
 --- !u!61 &4366308002061680659
 BoxCollider2D:
   m_ObjectHideFlags: 0
