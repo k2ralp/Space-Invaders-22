@@ -5,19 +5,7 @@ using UnityEngine;
 public class EnemyBehaviour : MonoBehaviour
 {
     public AudioClip clip;
-
-    public class Enemy
-    {
-
-        public int enemyCount;
-        public Enemy(int amount)
-        {
-            enemyCount = amount;
-        }
-
-    }
-
-    public Enemy enemyLeft = new Enemy(36);
+    bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -34,12 +22,18 @@ public class EnemyBehaviour : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         // Check if the other object is the projectile by its tag
-        if (collision.tag == "Laser")
+        if (collision.tag == "Laser" && isDead==false)
         {
-            ReduceEnemy();
-            
-            print("I'm Hit");
-            print(enemyLeft.enemyCount + "Enemy Left");
+            isDead = true;
+
+            Debug.Log("I'm Hit");
+            CanvasController.Instance.reduceEnemyCount();
+
+            if (CanvasController.Instance.enemyCount < 1)
+            {
+                CanvasController.Instance.RestartPanel.SetActive(true);
+            }
+            Debug.Log(CanvasController.Instance.enemyCount + "left");
 
             // Allows playing an audio clip even if the Alien is destroyed and removed from the scene
             AudioSource.PlayClipAtPoint(clip, Vector2.zero);
@@ -49,11 +43,10 @@ public class EnemyBehaviour : MonoBehaviour
 
             // Destroy the projectile game object
             Destroy(collision.gameObject);
+
+
         }
+
     }
 
-    void ReduceEnemy()
-    {
-        enemyLeft.enemyCount = enemyLeft.enemyCount - 1;
-    }
 }
